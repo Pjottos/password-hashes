@@ -145,6 +145,10 @@ impl Params {
         self.output_len
     }
 
+    pub(crate) fn iterations(&self) -> usize {
+        usize::try_from(self.t_cost).unwrap()
+    }
+
     /// Get the number of lanes.
     pub(crate) fn lanes(&self) -> usize {
         usize::try_from(self.p_cost).unwrap()
